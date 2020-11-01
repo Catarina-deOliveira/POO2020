@@ -1,5 +1,5 @@
 # POO2020
-Repositorio para exemplos de POO
+
 # Online Goods
 
 
