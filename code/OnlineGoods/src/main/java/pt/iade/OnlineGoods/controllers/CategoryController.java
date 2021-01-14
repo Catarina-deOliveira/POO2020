@@ -16,7 +16,7 @@ import pt.iade.OnlineGoods.models.exceptions.NotFoundException;
 import pt.iade.OnlineGoods.models.repositories.CategoryRepository;
 
 @RestController
-@RequestMapping(path = "/api/categories")
+@RequestMapping(path = "/api/categoria")
 public class CategoryController {
     private Logger logger = LoggerFactory.getLogger(CategoryController.class);
     @Autowired
@@ -31,10 +31,10 @@ public class CategoryController {
     @GetMapping(path = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public Category getCategory(@PathVariable int id) {
         logger.info("Sending category with id " + id);
-        Optional<Category> _category = categoryRepository.findById(id);
-        if (_category.isEmpty())
+        Optional<Category> _categoria = categoryRepository.findById(id);
+        if (_categoria.isEmpty())
             throw new NotFoundException("" + id, "Category", "id");
         else
-            return _category.get();
+            return _categoria.get();
     }
 }

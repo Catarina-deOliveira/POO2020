@@ -12,38 +12,45 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
-@Table(name = "product")
+@Table(name = "producto")
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    @Column(name = "product_id")
-    private int productID;
-    @Column(name = "product_name")
+    @Column(name = "producto_id")
+    private int productoID;
+    @Column(name = "producto_name")
     private String name;
-    @Column(name = "product_price")
+    @Column(name = "producto_price")
     private double price;
-    @Column(name = "product_description")
-    private String description;
+    @Column(name = "producto_reference")
+    private int reference;
+    @Column(name = "producto_stock")
+    private int stock;
 
     @ManyToOne
-    @JoinColumn(name = "category_product_id")
-    @JsonIgnoreProperties({ "product" })
+    @JoinColumn(name = "producto_categoria_id")
+    @JsonIgnoreProperties({ "producto" })
     private Category category;
 
-    public Product(int productID, String name, double price, String description) {
-        this.productID = productID;
+    public Product() {
+    }
+
+    public Product(int productoID, String name, double price, int reference, int stock, Category category) {
+        this.productoID = productoID;
         this.name = name;
         this.price = price;
-        this.description = description;
+        this.reference = reference;
+        this.stock = stock;
+        this.category = category;
     }
 
-    public int getProductID() {
-        return productID;
+    public int getProductoID() {
+        return productoID;
     }
 
-    public void setProductID(int productID) {
-        this.productID = productID;
+    public void setProductoID(int productoID) {
+        this.productoID = productoID;
     }
 
     public String getName() {
@@ -62,16 +69,28 @@ public class Product {
         this.price = price;
     }
 
-    public String getDescription() {
-        return description;
+    public int getReference() {
+        return reference;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setReference(int reference) {
+        this.reference = reference;
+    }
+
+    public int getStock() {
+        return stock;
+    }
+
+    public void setStock(int stock) {
+        this.stock = stock;
     }
 
     public Category getCategory() {
         return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
 }

@@ -7,7 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Admin extends User {
+public class Admin {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
@@ -15,7 +15,7 @@ public class Admin extends User {
     private int adminID;
 
     public Admin(int userID, String name, String email, double phone, int adminID) {
-        super(userID, name, email, phone);
+
         this.adminID = adminID;
     }
 

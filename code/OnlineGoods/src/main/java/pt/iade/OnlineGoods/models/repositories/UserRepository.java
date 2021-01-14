@@ -4,6 +4,6 @@ import org.springframework.data.repository.CrudRepository;
 
 import pt.iade.OnlineGoods.models.User;
 
-public interface UserRepository<T extends User> extends CrudRepository<User, Integer> {
+public interface UserRepository extends CrudRepository<User, Integer> {
 
 }
