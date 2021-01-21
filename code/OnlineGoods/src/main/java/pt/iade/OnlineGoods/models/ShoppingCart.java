@@ -12,7 +12,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "ShoppingCart")
-public class ShoppingCart implements Sellable {
+public class ShoppingCart {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
@@ -26,12 +26,6 @@ public class ShoppingCart implements Sellable {
     private User client;
 
     private int shoppingcartState;
-
-    @Override
-    public String getSold() {
-        // TODO Auto-generated method stub
-        return null;
-    }
 
     public ShoppingCart(int shoppingcartID, Date shoppingcartDate, User client, ShoppingCartState shoppingcartState) {
         this.shoppingcartID = shoppingcartID;
