@@ -8,19 +8,19 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import pt.iade.OnlineGoods.models.User;
-import pt.iade.OnlineGoods.models.repositories.UserRepository;
+import pt.iade.OnlineGoods.models.Package;
+import pt.iade.OnlineGoods.models.repositories.PackageRepository;
 
 @RestController
-@RequestMapping(path = "/api/user")
-public class UserController {
-    private Logger logger = LoggerFactory.getLogger(UserController.class);
+@RequestMapping(path = "/api/encomenda")
+public class PackageController {
+    private Logger logger = LoggerFactory.getLogger(PackageController.class);
     @Autowired
-    private UserRepository userRepository;
+    private PackageRepository packageRepository;
 
     @GetMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Iterable<User> getUsers() {
-        logger.info("Sending all users");
-        return userRepository.findAll();
+    public Iterable<Package> getPackages() {
+        logger.info("Sending all packages");
+        return packageRepository.findAll();
     }
 }
