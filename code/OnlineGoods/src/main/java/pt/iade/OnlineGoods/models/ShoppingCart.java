@@ -23,14 +23,24 @@ public class ShoppingCart {
 
     @ManyToOne
     @JoinColumn(name = "client_id")
-    private User client;
+    private Client client;
+    @ManyToOne
+    @JoinColumn(name = "admin_id")
+    private Admin admin;
 
     private int shoppingcartState;
 
-    public ShoppingCart(int shoppingcartID, Date shoppingcartDate, User client, ShoppingCartState shoppingcartState) {
+    /*
+     * @OneToOne(mappedBy = "order", cascade = CascadeType.ALL) private Payment
+     * payment; (Let's see if it works)
+     */
+
+    public ShoppingCart(int shoppingcartID, Date shoppingcartDate, Client client, Admin admin,
+            ShoppingCartState shoppingcartState) {
         this.shoppingcartID = shoppingcartID;
         this.shoppingcartDate = shoppingcartDate;
         this.client = client;
+        this.admin = admin;
         setShoppingCartState(shoppingcartState);
     }
 
@@ -50,11 +60,11 @@ public class ShoppingCart {
         this.shoppingcartDate = shoppingcartDate;
     }
 
-    public User getClient() {
+    public Client getClient() {
         return client;
     }
 
-    public void setClient(User client) {
+    public void setClient(Client client) {
         this.client = client;
     }
 
@@ -66,6 +76,14 @@ public class ShoppingCart {
         if (shoppingcartState != null) {
             this.shoppingcartState = shoppingcartState.getState();
         }
+    }
+
+    public Admin getAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(Admin admin) {
+        this.admin = admin;
     }
 
 }

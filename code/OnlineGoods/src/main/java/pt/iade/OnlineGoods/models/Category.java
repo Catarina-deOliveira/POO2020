@@ -24,17 +24,9 @@ public class Category {
     @Column(name = "categoria_name")
     private String name;
 
-    /*
-     * @OneToMany
-     * 
-     * @JoinColumn(name = "producto_categoria_id")
-     * 
-     * @JsonIgnoreProperties({ "categoria" }) private List<Product> product;
-     */
-
     @OneToMany
     @JoinColumn(name = "producto_categoria_id")
-    @JsonIgnoreProperties({ "categoria_id" })
+    @JsonIgnoreProperties({ "categoria" })
     private List<Product> product;
 
     public Category() {
