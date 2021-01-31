@@ -32,6 +32,15 @@ public class Product {
     @JoinColumn(name = "product_category_id")
     @JsonIgnoreProperties({ "product" })
     private Category category;
+    /*
+     * X produtos dentro de um carrinho
+     * 
+     * @ManyToOne
+     * 
+     * @JoinColumn(name = "product_shoppingcart_id")
+     * 
+     * @JsonIgnoreProperties({ "product" }) private ShoppingCart shoppingCart;
+     */
 
     public Product() {
     }

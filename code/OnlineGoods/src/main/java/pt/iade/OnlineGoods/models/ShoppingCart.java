@@ -1,6 +1,8 @@
 package pt.iade.OnlineGoods.models;
 
 import java.util.Date;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,7 +10,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "ShoppingCart")
@@ -28,12 +34,17 @@ public class ShoppingCart {
     @JoinColumn(name = "admin_id")
     private Admin admin;
 
-    private int shoppingcartState;
-
     /*
-     * @OneToOne(mappedBy = "order", cascade = CascadeType.ALL) private Payment
-     * payment; (Let's see if it works)
+     * X produtos dentro de um carrinho
+     * 
+     * @OneToMany
+     * 
+     * @JoinColumn(name="product_shoppingcart_id")
+     * 
+     * @JsonIgnoreProperties({"shoppingcart"}) private List<Product> product;
      */
+
+    private int shoppingcartState;
 
     public ShoppingCart(int shoppingcartID, Date shoppingcartDate, Client client, Admin admin,
             ShoppingCartState shoppingcartState) {

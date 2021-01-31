@@ -5,7 +5,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "client")
@@ -27,6 +31,15 @@ public class Client {
     private String address;
     @Column(name = "client_nif")
     private int nif;
+    /*
+     * 1 cliente pode fazer X encomendas
+     * 
+     * @ManyToOne
+     * 
+     * @JoinColumn(name = "package_client_id")
+     * 
+     * @JsonIgnoreProperties({ "client" }) private Package package;
+     */
 
     public Client() {
     }
