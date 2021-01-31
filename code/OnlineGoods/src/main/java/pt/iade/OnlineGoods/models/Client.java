@@ -8,31 +8,31 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "cliente")
+@Table(name = "client")
 public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    @Column(name = "cliente_id")
-    private int clienteID;
-    @Column(name = "cliente_name")
+    @Column(name = "client_id")
+    private int clientID;
+    @Column(name = "client_name")
     private String name;
-    @Column(name = "cliente_username")
+    @Column(name = "client_username")
     private String username;
-    @Column(name = "cliente_password")
+    @Column(name = "client_password")
     private String password;
-    @Column(name = "cliente_email")
+    @Column(name = "client_email")
     private String email;
-    @Column(name = "cliente_address")
+    @Column(name = "client_address")
     private String address;
-    @Column(name = "cliente_nif")
+    @Column(name = "client_nif")
     private int nif;
 
     public Client() {
     }
 
-    public Client(int clienteID, String name, String username, String password, String email, String address, int nif) {
-        this.clienteID = clienteID;
+    public Client(int clientID, String name, String username, String password, String email, String address, int nif) {
+        this.clientID = clientID;
         this.name = name;
         this.username = username;
         this.password = password;
@@ -41,12 +41,12 @@ public class Client {
         this.nif = nif;
     }
 
-    public int getClienteID() {
-        return clienteID;
+    public int getClientID() {
+        return clientID;
     }
 
-    public void setClienteID(int clienteID) {
-        this.clienteID = clienteID;
+    public void setClientID(int clientID) {
+        this.clientID = clientID;
     }
 
     public String getName() {

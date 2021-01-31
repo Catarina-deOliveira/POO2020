@@ -12,7 +12,7 @@ import pt.iade.OnlineGoods.models.Client;
 import pt.iade.OnlineGoods.models.repositories.ClientRepository;
 
 @RestController
-@RequestMapping(path = "/api/cliente")
+@RequestMapping(path = "/api/client")
 public class ClientController {
     private Logger logger = LoggerFactory.getLogger(ClientController.class);
     @Autowired

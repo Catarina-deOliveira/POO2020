@@ -14,34 +14,34 @@ public class Payment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    @Column(name = "pagamento_id")
-    private int pagamentoID;
-    @Column(name = "pagamento_creditcardnumber")
+    @Column(name = "payment_id")
+    private int paymentID;
+    @Column(name = "payment_creditcardnumber")
     private int creditcardnumber;
-    @Column(name = "pagamento_cvc")
+    @Column(name = "payment_cvc")
     private int cvc;
-    @Column(name = "pagamento_datavalidade")
-    private Date datavalidade;
-    @Column(name = "pagamento_date")
+    @Column(name = "payment_validdate")
+    private Date validdate;
+    @Column(name = "payment_date")
     private Date date;
 
     public Payment() {
     }
 
-    public Payment(int pagamentoID, int creditcardnumber, int cvc, Date datavalidade, Date date) {
-        this.pagamentoID = pagamentoID;
+    public Payment(int paymentID, int creditcardnumber, int cvc, Date validdate, Date date) {
+        this.paymentID = paymentID;
         this.creditcardnumber = creditcardnumber;
         this.cvc = cvc;
-        this.datavalidade = datavalidade;
+        this.validdate = validdate;
         this.date = date;
     }
 
-    public int getPagamentoID() {
-        return pagamentoID;
+    public int getPaymentID() {
+        return paymentID;
     }
 
-    public void setPagamentoID(int pagamentoID) {
-        this.pagamentoID = pagamentoID;
+    public void setPaymentID(int paymentID) {
+        this.paymentID = paymentID;
     }
 
     public int getCreditcardnumber() {
@@ -60,12 +60,12 @@ public class Payment {
         this.cvc = cvc;
     }
 
-    public Date getDatavalidade() {
-        return datavalidade;
+    public Date getValiddate() {
+        return validdate;
     }
 
-    public void setDatavalidade(Date datavalidade) {
-        this.datavalidade = datavalidade;
+    public void setValiddate(Date validdate) {
+        this.validdate = validdate;
     }
 
     public Date getDate() {

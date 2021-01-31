@@ -18,7 +18,7 @@ import pt.iade.OnlineGoods.models.exceptions.NotFoundException;
 import pt.iade.OnlineGoods.models.repositories.ProductRepository;
 
 @RestController
-@RequestMapping(path = "/api/producto")
+@RequestMapping(path = "/api/product")
 public class ProductController {
     private Logger logger = LoggerFactory.getLogger(ProductController.class);
     @Autowired
@@ -33,16 +33,16 @@ public class ProductController {
     @GetMapping(path = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public Product getProduct(@PathVariable int id) {
         logger.info("Sending product with id " + id);
-        Optional<Product> _producto = productRepository.findById(id);
-        if (_producto.isEmpty())
+        Optional<Product> _product = productRepository.findById(id);
+        if (_product.isEmpty())
             throw new NotFoundException("" + id, "Product", "id");
         else
-            return _producto.get();
+            return _product.get();
     }
 
-    @PostMapping(path = "/{productoID}/productos", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Product updateProduct(@RequestBody Product producto, @PathVariable int id) {
+    @PostMapping(path = "/{productID}/products", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Product updateProduct(@RequestBody Product product, @PathVariable int id) {
 
-        return productRepository.save(producto);
+        return productRepository.save(product);
     }
 }

@@ -12,32 +12,32 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
-@Table(name = "producto")
+@Table(name = "product")
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    @Column(name = "producto_id")
-    private int productoID;
-    @Column(name = "producto_name")
+    @Column(name = "product_id")
+    private int productID;
+    @Column(name = "product_name")
     private String name;
-    @Column(name = "producto_price")
+    @Column(name = "product_price")
     private double price;
-    @Column(name = "producto_reference")
+    @Column(name = "product_reference")
     private int reference;
-    @Column(name = "producto_stock")
+    @Column(name = "product_stock")
     private int stock;
 
     @ManyToOne
-    @JoinColumn(name = "producto_categoria_id")
-    @JsonIgnoreProperties({ "producto" })
+    @JoinColumn(name = "product_category_id")
+    @JsonIgnoreProperties({ "product" })
     private Category category;
 
     public Product() {
     }
 
-    public Product(int productoID, String name, double price, int reference, int stock, Category category) {
-        this.productoID = productoID;
+    public Product(int productID, String name, double price, int reference, int stock, Category category) {
+        this.productID = productID;
         this.name = name;
         this.price = price;
         this.reference = reference;
@@ -45,12 +45,12 @@ public class Product {
         this.category = category;
     }
 
-    public int getProductoID() {
-        return productoID;
+    public int getProductID() {
+        return productID;
     }
 
-    public void setProductoID(int productoID) {
-        this.productoID = productoID;
+    public void setProductID(int productID) {
+        this.productID = productID;
     }
 
     public String getName() {

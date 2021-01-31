@@ -12,7 +12,7 @@ import pt.iade.OnlineGoods.models.Package;
 import pt.iade.OnlineGoods.models.repositories.PackageRepository;
 
 @RestController
-@RequestMapping(path = "/api/encomenda")
+@RequestMapping(path = "/api/package")
 public class PackageController {
     private Logger logger = LoggerFactory.getLogger(PackageController.class);
     @Autowired

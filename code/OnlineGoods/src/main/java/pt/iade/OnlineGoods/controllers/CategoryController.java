@@ -16,7 +16,7 @@ import pt.iade.OnlineGoods.models.exceptions.NotFoundException;
 import pt.iade.OnlineGoods.models.repositories.CategoryRepository;
 
 @RestController
-@RequestMapping(path = "/api/categoria")
+@RequestMapping(path = "/api/category")
 public class CategoryController {
     private Logger logger = LoggerFactory.getLogger(CategoryController.class);
     @Autowired

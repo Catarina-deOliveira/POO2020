@@ -8,40 +8,40 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "encomenda")
+@Table(name = "package")
 public class Package {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    @Column(name = "encomenda_id")
-    private int encomendaID;
-    @Column(name = "encomenda_reference")
+    @Column(name = "package_id")
+    private int packageID;
+    @Column(name = "package_reference")
     private int reference;
-    @Column(name = "encomenda_producto_id")
-    private int encomenda_productoID;
-    @Column(name = "encomenda_pagamento_id")
-    private int encomenda_pagamentoID;
-    @Column(name = "encomenda_cliente_id")
-    private int encomenda_clienteID;
+    @Column(name = "package_product_id")
+    private int package_productID;
+    @Column(name = "package_payment_id")
+    private int package_paymentID;
+    @Column(name = "encomenda_client_id")
+    private int package_clientID;
 
     public Package() {
     }
 
-    public Package(int encomendaID, int reference, int encomenda_productoID, int encomenda_pagamentoID,
-            int encomenda_clienteID) {
-        this.encomendaID = encomendaID;
+    public Package(int packageID, int reference, int package_productID, int package_paymentID,
+            int package_clientID) {
+        this.packageID = packageID;
         this.reference = reference;
-        this.encomenda_productoID = encomenda_productoID;
-        this.encomenda_pagamentoID = encomenda_pagamentoID;
-        this.encomenda_clienteID = encomenda_clienteID;
+        this.package_productID = package_productID;
+        this.package_paymentID = package_paymentID;
+        this.package_clientID = package_clientID;
     }
 
-    public int getEncomendaID() {
-        return encomendaID;
+    public int getPackageID() {
+        return packageID;
     }
 
-    public void setEncomendaID(int encomendaID) {
-        this.encomendaID = encomendaID;
+    public void setPackageID(int packageID) {
+        this.packageID = packageID;
     }
 
     public int getReference() {
@@ -52,28 +52,28 @@ public class Package {
         this.reference = reference;
     }
 
-    public int getEncomenda_productoID() {
-        return encomenda_productoID;
+    public int getPackage_productID() {
+        return package_productID;
     }
 
-    public void setEncomenda_productoID(int encomenda_productoID) {
-        this.encomenda_productoID = encomenda_productoID;
+    public void setPackage_productID(int package_productID) {
+        this.package_productID = package_productID;
     }
 
-    public int getEncomenda_pagamentoID() {
-        return encomenda_pagamentoID;
+    public int getPackage_paymentID() {
+        return package_paymentID;
     }
 
-    public void setEncomenda_pagamentoID(int encomenda_pagamentoID) {
-        this.encomenda_pagamentoID = encomenda_pagamentoID;
+    public void setPackage_paymentID(int package_paymentID) {
+        this.package_paymentID = package_paymentID;
     }
 
-    public int getEncomenda_clienteID() {
-        return encomenda_clienteID;
+    public int getPackage_clientID() {
+        return package_clientID;
     }
 
-    public void setEncomenda_clienteID(int encomenda_clienteID) {
-        this.encomenda_clienteID = encomenda_clienteID;
+    public void setPackage_clientID(int package_clientID) {
+        this.package_clientID = package_clientID;
     }
 
 }

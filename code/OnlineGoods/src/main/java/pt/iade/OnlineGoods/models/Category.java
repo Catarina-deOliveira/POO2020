@@ -14,36 +14,36 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
-@Table(name = "categoria")
+@Table(name = "category")
 public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    @Column(name = "categoria_id")
-    private int categoriaID;
-    @Column(name = "categoria_name")
+    @Column(name = "category_id")
+    private int categoryID;
+    @Column(name = "category_name")
     private String name;
 
     @OneToMany
-    @JoinColumn(name = "producto_categoria_id")
-    @JsonIgnoreProperties({ "categoria" })
+    @JoinColumn(name = "product_category_id")
+    @JsonIgnoreProperties({ "category" })
     private List<Product> product;
 
     public Category() {
     }
 
-    public Category(int categoriaID, String name, List<Product> product) {
-        this.categoriaID = categoriaID;
+    public Category(int categoryID, String name, List<Product> product) {
+        this.categoryID = categoryID;
         this.name = name;
         this.product = product;
     }
 
-    public int getCategoriaID() {
-        return categoriaID;
+    public int getCategoryID() {
+        return categoryID;
     }
 
-    public void setCategoriaID(int categoriaID) {
-        this.categoriaID = categoriaID;
+    public void setCategoryID(int categoryID) {
+        this.categoryID = categoryID;
     }
 
     public String getName() {
