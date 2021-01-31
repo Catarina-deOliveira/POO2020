@@ -40,9 +40,19 @@ public class ProductController {
             return _product.get();
     }
 
-    @PostMapping(path = "/{productID}/products", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Product updateProduct(@RequestBody Product product, @PathVariable int id) {
-
-        return productRepository.save(product);
+    // Novo Método
+    @PostMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Product saveProduct(@RequestBody Product newProduct) {
+        logger.info("Saving product with name: " + newProduct.getName());
+        Product product = productRepository.save(newProduct);
+        return product;
     }
+    /*
+     * @PostMapping(path = "/{productID}/products", produces =
+     * MediaType.APPLICATION_JSON_VALUE) public Product updateProduct(@RequestBody
+     * Product product, @PathVariable int id) {
+     * 
+     * return productRepository.save(product); }
+     */
+
 }

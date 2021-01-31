@@ -21,14 +21,13 @@ public class Package {
     private int package_productID;
     @Column(name = "package_payment_id")
     private int package_paymentID;
-    @Column(name = "encomenda_client_id")
+    @Column(name = "package_client_id")
     private int package_clientID;
 
     public Package() {
     }
 
-    public Package(int packageID, int reference, int package_productID, int package_paymentID,
-            int package_clientID) {
+    public Package(int packageID, int reference, int package_productID, int package_paymentID, int package_clientID) {
         this.packageID = packageID;
         this.reference = reference;
         this.package_productID = package_productID;
