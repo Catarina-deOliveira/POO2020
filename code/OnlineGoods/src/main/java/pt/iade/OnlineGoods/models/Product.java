@@ -32,11 +32,8 @@ public class Product {
     @JoinColumn(name = "product_category_id")
     @JsonIgnoreProperties({ "product" })
     private Category category;
+
     /*
-     * X produtos dentro de um carrinho
-     * 
-     * @ManyToOne
-     * 
      * @JoinColumn(name = "product_shoppingcart_id")
      * 
      * @JsonIgnoreProperties({ "product" }) private ShoppingCart shoppingCart;
@@ -45,13 +42,15 @@ public class Product {
     public Product() {
     }
 
-    public Product(int productID, String name, double price, int reference, int stock, Category category) {
+    public Product(int productID, String name, double price, int reference, int stock, Category category,
+            ShoppingCart shoppingCart) {
         this.productID = productID;
         this.name = name;
         this.price = price;
         this.reference = reference;
         this.stock = stock;
         this.category = category;
+
     }
 
     public int getProductID() {

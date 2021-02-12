@@ -9,6 +9,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+//import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -40,19 +41,11 @@ public class ProductController {
             return _product.get();
     }
 
-    // Novo Método
     @PostMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE)
     public Product saveProduct(@RequestBody Product newProduct) {
-        logger.info("Saving product with name: " + newProduct.getName());
+        logger.info("Saving a product with name: " + newProduct.getName());
         Product product = productRepository.save(newProduct);
         return product;
     }
-    /*
-     * @PostMapping(path = "/{productID}/products", produces =
-     * MediaType.APPLICATION_JSON_VALUE) public Product updateProduct(@RequestBody
-     * Product product, @PathVariable int id) {
-     * 
-     * return productRepository.save(product); }
-     */
 
 }
