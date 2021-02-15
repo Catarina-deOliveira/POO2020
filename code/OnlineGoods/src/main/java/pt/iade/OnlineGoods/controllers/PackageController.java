@@ -8,12 +8,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import pt.iade.OnlineGoods.models.Package;
 import pt.iade.OnlineGoods.models.exceptions.NotFoundException;
 import pt.iade.OnlineGoods.models.repositories.PackageRepository;
+import pt.iade.OnlineGoods.models.views.PackageView;
 
 @RestController
 @RequestMapping(path = "/api/package")
@@ -37,4 +39,19 @@ public class PackageController {
         else
             return _package.get();
     }
+
+    @GetMapping(path = "/{id}/info", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Iterable<PackageView> getPackageInformation(@PathVariable int id) {
+        logger.info("Sending info of package with client_id " + id);
+        return packageRepository.findPackageInformation(id);
+    }
+
+    /*
+     * @PostMapping(path = "/{id}/info", produces =
+     * MediaType.APPLICATION_JSON_VALUE) public int
+     * savePackageInformation(@PathVariable int id, @RequestBody PackageView
+     * package) { logger.info("Saving new track on album with id: " + id); return
+     * packageRepository.savePackageInformation(id); }
+     */
+
 }

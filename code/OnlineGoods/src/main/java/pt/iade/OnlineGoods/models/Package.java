@@ -8,7 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 //import javax.persistence.JoinColumn;
-//import javax.persistence.OneToMany;
+//import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 //import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -29,10 +29,9 @@ public class Package {
     private int package_paymentID;
     @Column(name = "package_client_id")
     private int package_clientID;
+
     /*
-     * Encomendas diferentes podem pertencer ao mesmo cliente se feitas em separado
-     * 
-     * @ManytoOne
+     * @ManyToOne
      * 
      * @JoinColumn(name = "package_client_id")
      * 
